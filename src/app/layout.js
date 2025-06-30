@@ -1,6 +1,8 @@
 import "./globals.css";
 import { Work_Sans } from "next/font/google";
+import Header from "../components/Header";
 
+// Подключаем Work Sans из Google Fonts
 const workSans = Work_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
@@ -9,15 +11,19 @@ const workSans = Work_Sans({
 
 export const metadata = {
   title: "NFT Marketplace",
-  description: "Created with Next.js",
+  description: "Discover, collect and sell extraordinary NFTs",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={workSans.className}>{children}</body>
+      <body className={`${workSans.className} bg-dark text-white`}>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }
+
 
 
