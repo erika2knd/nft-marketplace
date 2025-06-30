@@ -1,8 +1,9 @@
 import FeaturedNFTCard from "./FeaturedNFTCard";
+import SectionWrapper from "./SectionWrapper";
 
 export default function Hero() {
   return (
-    <section className="bg-[#2B2B2B] text-white py-24 px-6 lg:px-24">
+    <SectionWrapper className="bg-[#2B2B2B] text-white">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-20">
         {/* Левая часть: текст и кнопка */}
         <div>
@@ -45,7 +46,7 @@ export default function Hero() {
           <FeaturedNFTCard />
         </div>
       </div>
-    </section>
+    </SectionWrapper>
   );
 }
 
