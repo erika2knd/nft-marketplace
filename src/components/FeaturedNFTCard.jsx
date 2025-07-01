@@ -1,4 +1,4 @@
-export default function FeaturedNFTCard() {
+ export default function FeaturedNFTCard() {
   return (
     <div className="bg-[#3B3E47] rounded-[20px] overflow-hidden w-[510px] shadow-lg">
       <img
