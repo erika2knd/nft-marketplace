@@ -15,3 +15,23 @@ module.exports = {
   },
   plugins: [],
 };
+
+
+module.exports = {
+  theme: {
+    extend: {
+      keyframes: {
+        wiggleY: {
+          '0%, 100%': { transform: 'rotateY(0deg)' },
+          '25%': { transform: 'rotateY(5deg)' },
+          '75%': { transform: 'rotateY(-5deg)' },
+        },
+      },
+      animation: {
+        wiggleY: 'wiggleY 6s ease-in-out infinite',
+      },
+    },
+  },
+  plugins: [],
+};
+

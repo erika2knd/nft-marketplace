@@ -1,6 +1,7 @@
  export default function FeaturedNFTCard() {
   return (
-    <div className="bg-[#3B3E47] rounded-[20px] overflow-hidden w-[510px] shadow-lg">
+    <div className="w-full flex justify-center perspective-[1000px]">
+    <div className="bg-[#3B3E47] rounded-[20px] overflow-hidden w-[510px] shadow-lg animate-wiggleY nft-card-glare">
       <img
         src="/images/Image-Placeholder.jpg"
         alt="NFT"
@@ -19,6 +20,9 @@
         </div>
       </div>
     </div>
+  </div>
   );
 }
+
+
 

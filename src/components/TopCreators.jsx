@@ -13,13 +13,13 @@ export default function TopCreators() {
               Checkout Top Rated Creators On The NFT Marketplace
             </p>
           </div>
-          <button className="border border-[#A259FF] rounded-[20px] px-5 py-3 flex items-center gap-2 hover:bg-[#A259FF]/20 transition">
-            <img src="/icons/RocketLaunch.png" alt="rocket" className="w-4 h-4" />
+          <button className="border-2 border-[#A259FF] rounded-[15px] px-13 py-4 flex items-center gap-5 transition-transform duration-300 ease-in-out hover:scale-95">
+            <img src="/icons/purplerocket.png" alt="rocket" className="w-5 h-5" />
             <span className="text-sm font-semibold">View Rankings</span>
           </button>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 place-items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {creators.map((creator, index) => (
             <TopCreatorCard key={index} index={index} {...creator} />
           ))}
