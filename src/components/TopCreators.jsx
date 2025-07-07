@@ -5,7 +5,7 @@ import SectionWrapper from "./SectionWrapper";
 export default function TopCreators() {
   return (
     <SectionWrapper className="bg-[#2B2B2B] text-white">
-      <div className="max-w-7xl mx-auto">
+
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-6">
           <div>
             <h2 className="text-4xl font-bold mb-2">Top Creators</h2>
@@ -24,7 +24,6 @@ export default function TopCreators() {
             <TopCreatorCard key={index} index={index} {...creator} />
           ))}
         </div>
-      </div>
     </SectionWrapper>
   );
 }

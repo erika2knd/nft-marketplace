@@ -4,8 +4,7 @@ import SectionWrapper from "./SectionWrapper";
 export default function Hero() {
   return (
     <SectionWrapper className="bg-[#2B2B2B] text-white">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-20">
-        {/* Левая часть: текст и кнопка */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-20">
         <div>
           <h1 className="text-[67px] leading-tight font-bold mb-6">
             Discover <br className="hidden md:block" />
@@ -24,7 +23,6 @@ export default function Hero() {
             </button>
           </div>
 
-          {/* Цифры */}
           <div className="flex gap-12 text-center">
             <div>
               <h3 className="text-[28px] font-bold">240k+</h3>
@@ -41,7 +39,6 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Правая часть: NFT карточка */}
         <div className="flex justify-center">
           <FeaturedNFTCard />
         </div>

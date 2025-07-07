@@ -5,7 +5,6 @@ import SectionWrapper from "./SectionWrapper";
 export default function DiscoverNFTs() {
   return (
     <SectionWrapper className="bg-[#2B2B2B] text-white py-20">
-      <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center mb-10">
           <div>
             <h2 className="text-4xl font-bold mb-2">Discover More NFTs</h2>
@@ -22,7 +21,6 @@ export default function DiscoverNFTs() {
             <NFTCard key={index} {...nft} />
           ))}
         </div>
-      </div>
     </SectionWrapper>
   );
 }

@@ -40,7 +40,6 @@ const collections = [
 export default function TrendingCollection() {
   return (
     <SectionWrapper className="bg-[#2B2B2B] text-white">
-      <div className="max-w-7xl mx-auto ">
         <h2 className="text-4xl font-bold mb-2">Trending Collection</h2>
         <p className="text-grayText mb-20">
           Checkout our weekly updated trending collection.
@@ -51,7 +50,6 @@ export default function TrendingCollection() {
             <TrendingCard key={index} {...item} />
           ))}
         </div>
-      </div>
     </SectionWrapper>
   );
 }
