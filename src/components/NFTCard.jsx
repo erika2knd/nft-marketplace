@@ -1,7 +1,6 @@
-// components/NFTCard.jsx
 export default function NFTCard({ image, title, author, authorAvatar, price, bid }) {
   return (
-    <div className="bg-[#3B3E47] rounded-[20px] overflow-hidden w-[330px] transition-transform duration-300 ease-in-out hover:scale-95">
+    <div className="bg-[#3B3E47] rounded-[20px] overflow-hidden w-full transition-transform duration-300 ease-in-out hover:scale-95">
       <img src={image} alt={title} className="w-full h-[296px] object-cover" />
 
       <div className="p-5">
