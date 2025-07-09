@@ -2,7 +2,7 @@ import SectionWrapper from "./SectionWrapper";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#3B3E47] text-white">
+    <footer className="bg-[#3B3B3B] text-white">
       <SectionWrapper>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <div>
