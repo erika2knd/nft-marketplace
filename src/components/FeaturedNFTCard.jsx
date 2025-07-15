@@ -1,6 +1,8 @@
- export default function FeaturedNFTCard() {
+import Link from "next/link";
+export default function FeaturedNFTCard() {
   return (
     <div className="w-full flex justify-center perspective-[1000px]">
+      <Link href="/artist-page" className="block w-fit">
     <div className="bg-[#3B3E47] rounded-[20px] overflow-hidden w-[510px] shadow-lg animate-wiggleY nft-card-glare">
       <img
         src="/images/Image-Placeholder.jpg"
@@ -20,6 +22,7 @@
         </div>
       </div>
     </div>
+    </Link>
   </div>
   );
 }

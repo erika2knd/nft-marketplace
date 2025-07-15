@@ -54,7 +54,8 @@ const nftItems = [
 
 export default function ArtistNFTGrid() {
   return (
-    <SectionWrapper className="py-16 bg-[#2B2B2B]">
+    <SectionWrapper noPadding className="py-0 pb-24 bg-[#2B2B2B]">
+      <div className="max-w-7xl w-full mx-auto px-12">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {nftItems.map((item, idx) => (
           <div key={idx} className="bg-[#3B3B3B] rounded-[20px] overflow-hidden transition-transform duration-300 hover:scale-95">
@@ -65,6 +66,7 @@ export default function ArtistNFTGrid() {
               height={300}
               className="w-full h-[296px] object-cover"
             />
+
             <div className="p-5">
               <h3 className="text-white text-xl font-semibold mb-2">{item.title}</h3>
 
@@ -79,11 +81,13 @@ export default function ArtistNFTGrid() {
                 <span className="text-gray-400 text-sm font-mono">{item.authorName}</span>
               </div>
 
+
               <div className="flex justify-between text-sm text-white">
                 <div>
                   <p className="text-gray-400">Price</p>
                   <p>{item.price}</p>
                 </div>
+
                 <div className="text-right">
                   <p className="text-gray-400">Highest Bid</p>
                   <p>{item.bid}</p>
@@ -92,6 +96,7 @@ export default function ArtistNFTGrid() {
             </div>
           </div>
         ))}
+      </div>
       </div>
     </SectionWrapper>
   );
