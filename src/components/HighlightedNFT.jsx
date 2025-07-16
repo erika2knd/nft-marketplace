@@ -1,4 +1,5 @@
 import SectionWrapper from "./SectionWrapper";
+import Link from "next/link";
 
 export default function HighlightedNFT() {
   return (
@@ -17,10 +18,10 @@ export default function HighlightedNFT() {
             <span className="text-sm font-medium">Shroomie</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold">Magic Mashrooms</h2>
-          <button className="bg-white text-black font-semibold rounded-[20px] px-10 py-4 flex items-center gap-3 hover:scale-95 transition w-fit">
+          <Link href="/nft-page" className="bg-white text-black font-semibold rounded-[20px] px-10 py-4 flex items-center gap-3 hover:scale-95 transition w-fit">
             <img src="/icons/Eye.png" alt="See" className="w-5 h-5" />
             <span>See NFT</span>
-          </button>
+          </Link>
         </div>
         <div>
           <div className="bg-[#3B3E47]/70 px-10 py-6 rounded-[20px] text-center w-fit">

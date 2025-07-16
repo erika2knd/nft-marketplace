@@ -17,7 +17,7 @@ export default function ArtistPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-[#A259FF]/60 to-transparent" />
 
         <SectionWrapper>
-          <div className="absolute left-6 lg:left-24 bottom-[-70px] z-10">
+          <div className="absolute left-6 lg:left-30 bottom-[-70px] z-10">
             <Image
               src="/icons/AnimakidImage.png"
               alt="Avatar"

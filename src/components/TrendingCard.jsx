@@ -1,6 +1,9 @@
+import Link from "next/link";
+
 export default function TrendingCard({ images, title, author, authorAvatar, count }) {
   return (
-    <div className="w-full">
+    <Link href="/nft-page">
+    <div className="w-full coursor-pointer">
       <div className="transition-transform duration-300 ease-in-out hover:scale-95">
         <img
           src={images[0]}
@@ -35,6 +38,7 @@ export default function TrendingCard({ images, title, author, authorAvatar, coun
         </div>
       </div>
     </div>
+    </Link>
   );
 }
 

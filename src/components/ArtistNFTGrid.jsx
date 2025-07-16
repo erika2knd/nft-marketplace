@@ -55,7 +55,7 @@ const nftItems = [
 export default function ArtistNFTGrid() {
   return (
     <SectionWrapper noPadding className="py-0 pb-24 bg-[#2B2B2B]">
-      <div className="max-w-7xl w-full mx-auto px-12">
+      <div className="max-w-7xl w-full mx-auto px-10">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {nftItems.map((item, idx) => (
           <div key={idx} className="bg-[#3B3B3B] rounded-[20px] overflow-hidden transition-transform duration-300 hover:scale-95">

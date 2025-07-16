@@ -1,6 +1,9 @@
+import Link from "next/link";
+
 export default function NFTCard({ image, title, author, authorAvatar, price, bid }) {
   return (
-    <div className="bg-[#3B3E47] rounded-[20px] overflow-hidden w-full transition-transform duration-300 ease-in-out hover:scale-95">
+    <Link href="/nft-page">
+    <div className="coursor-pointer bg-[#3B3E47] rounded-[20px] overflow-hidden w-full transition-transform duration-300 ease-in-out hover:scale-95">
       <img src={image} alt={title} className="w-full h-[296px] object-cover" />
 
       <div className="p-5">
@@ -23,5 +26,6 @@ export default function NFTCard({ image, title, author, authorAvatar, price, bid
         </div>
       </div>
     </div>
+    </Link>
   );
 }
