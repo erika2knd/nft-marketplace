@@ -10,7 +10,7 @@ export default function Header() {
         </Link>
         <div className="hidden md:flex items-center gap-10">
           <nav className="flex items-center gap-10 text-gray-300 font-medium">
-            <Link href="/" className="hover:text-white transition">Marketplace</Link>
+            <Link href="/marketplace" className="hover:text-white transition">Marketplace</Link>
             <Link href="/rankings" className="hover:text-white transition">Rankings</Link>
             <Link href="/connect-wallet" className="hover:text-white transition">Connect a Wallet</Link>
           </nav>

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import SectionWrapper from "./SectionWrapper";
 
 export default function Footer() {
@@ -24,9 +25,15 @@ export default function Footer() {
           <div>
             <h4 className="text-xl font-bold mb-4">Explore</h4>
             <ul className="text-grayText space-y-3 text-sm">
-              <li>Marketplace</li>
-              <li>Rankings</li>
-              <li>Connect a wallet</li>
+              <li>
+                <Link href="/marketplace" className="hover:text-gray transition duration-300">Marketplace</Link>
+              </li>
+              <li>
+                <Link href="/rankings" className="hover:text-gray transition duration-300">Rankings</Link>
+              </li>
+              <li>
+                <Link href="/connect-wallet" className="hover:text-gray transition duration-300">Connect a wallet </Link>
+              </li>
             </ul>
           </div>
           <div>

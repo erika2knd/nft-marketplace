@@ -1,6 +1,7 @@
+import Link from "next/link";
 const NFTCard = ({ title, author, authorAvatar, image, price, highestBid }) => {
   return (
-    <div className="bg-[#3B3B3B] rounded-[20px] overflow-hidden transition hover:scale-95">
+    <Link href="/nft-page" className="bg-[#3B3B3B] rounded-[20px] overflow-hidden transition hover:scale-95">
       <img
         src={image}
         alt={title}
@@ -23,7 +24,7 @@ const NFTCard = ({ title, author, authorAvatar, image, price, highestBid }) => {
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

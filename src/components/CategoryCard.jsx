@@ -1,6 +1,8 @@
+import Link from "next/link";
+
 export default function CategoryCard({ title, image, icon }) {
   return (
-    <div className="rounded-[20px] overflow-hidden bg-[#3B3E47] h-[316px] relative group transition-transform duration-300 ease-in-out hover:scale-95">
+    <Link href="/marketplace" className="rounded-[20px] overflow-hidden bg-[#3B3E47] h-[316px] relative group transition-transform duration-300 ease-in-out hover:scale-95">
       <div className="absolute inset-0 z-0">
         <img
           src={image}
@@ -14,7 +16,7 @@ export default function CategoryCard({ title, image, icon }) {
       <div className="absolute bottom-0 left-0 w-full h-[80px] bg-[#3B3E47] z-20 flex items-center px-4">
         <h3 className="text-white font-semibold text-lg">{title}</h3>
       </div>
-    </div>
+    </Link>
   );
 }
 

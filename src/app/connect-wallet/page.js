@@ -19,13 +19,13 @@ export default function ConnectWalletPage() {
         <div className="w-full lg:w-1/2 flex items-center justify-center px-6 lg:px-24 py-16">
           <div className="w-full max-w-md">
             <h1 className="text-5xl font-bold mb-4">Connect Wallet</h1>
-            <p className="text-gray-300 mb-10 text-lg leading-relaxed">
+            <p className="text-gray-300 mb-10 text-xl leading-relaxed">
               Choose a wallet you want to connect.
               <br />
               There are several wallet providers.
             </p>
 
-            <div className="flex flex-col gap-4 max-w-xs"> 
+            <div className="flex flex-col gap-4 max-w-sm"> 
               <WalletButton icon="/icons/Metamask.png" label="Metamask" />
               <WalletButton icon="/icons/WalletConnect.png" label="Wallet Connect" />
               <WalletButton icon="/icons/Coinbase.png" label="Coinbase" />

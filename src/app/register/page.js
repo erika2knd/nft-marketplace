@@ -21,7 +21,7 @@ export default function RegisterPage() {
                 Create Account
             </h1>
             <p className="text-gray-300 mb-10 text-xl leading-relaxed max-w-xl">
-                Welcome! Enter Your Details And Start Creating, Collecting And Selling NFTs.
+                Welcome! Enter Your Details And Start <br></br> Creating, Collecting And Selling NFTs.
             </p>
 
             <form className="flex flex-col gap-5 max-w-sm"> 

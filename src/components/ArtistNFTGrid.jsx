@@ -1,5 +1,6 @@
 import Image from "next/image";
 import SectionWrapper from "./SectionWrapper";
+import Link from "next/link";
 
 const nftItems = [
   {
@@ -58,7 +59,7 @@ export default function ArtistNFTGrid() {
       <div className="max-w-7xl w-full mx-auto px-10">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {nftItems.map((item, idx) => (
-          <div key={idx} className="bg-[#3B3B3B] rounded-[20px] overflow-hidden transition-transform duration-300 hover:scale-95">
+          <Link href="/nft-page" key={idx} className="bg-[#3B3B3B] rounded-[20px] overflow-hidden transition-transform duration-300 hover:scale-95">
             <Image
               src={item.image}
               alt={item.title}
@@ -94,7 +95,7 @@ export default function ArtistNFTGrid() {
                 </div>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
       </div>

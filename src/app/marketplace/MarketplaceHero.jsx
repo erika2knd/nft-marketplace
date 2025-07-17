@@ -27,18 +27,20 @@ const MarketplaceHero = () => {
       </div>
 
       
-      <div className="border-b border-[#3B3B3B]">
-        <div className="flex gap-6">
-          <div className="flex items-center gap-2 text-white font-semibold border-b-2 border-white pb-3">
-            <span>NFTs</span>
-            <span className="bg-[#858584] text-xs rounded-full px-2 py-[2px]">302</span>
-          </div>
-          <div className="flex items-center gap-2 text-[#858584] font-semibold pb-3">
-            <span>Collections</span>
-            <span className="bg-[#3B3B3B] text-xs rounded-full px-2 py-[2px]">67</span>
-          </div>
-        </div>
-      </div>
+     <div className="border-b border-[#3B3B3B]">
+  <div className="flex justify-center gap-10 text-base">
+    <div className="flex items-center gap-2 text-[#858584] font-semibold pb-4">
+      <span>NFTs</span>
+      <span className="bg-[#3B3B3B] text-sm rounded-full px-3 py-1">302</span>
+    </div>
+    <div className="flex items-center gap-2 text-[#858584] font-semibold pb-4">
+      <span>Collections</span>
+      <span className="bg-[#3B3B3B] text-sm rounded-full px-3 py-1">67</span>
+    </div>
+  </div>
+</div>
+
+
     </SectionWrapper>
   );
 };
