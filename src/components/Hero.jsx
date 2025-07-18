@@ -18,7 +18,7 @@ export default function Hero() {
           </p>
 
           <div className="mb-12">
-            <Link href="/register" className="bg-[#A259FF] text-white h-[60px] px-[50px] rounded-[20px] font-semibold flex items-center gap-[12px] shadow-md hover:opacity-90 transition">
+            <Link href="/register" className="w-max bg-[#A259FF] text-white h-[60px] px-[50px] rounded-[20px] font-semibold flex items-center gap-[12px] shadow-md hover:opacity-90 transition">
               <img src="/icons/RocketLaunch.png" alt="Rocket" className="w-5 h-5" />
               Get Started
             </Link>

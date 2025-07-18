@@ -2,17 +2,18 @@
 import SectionWrapper from "@/components/SectionWrapper";
 import artistNfts from "./artistsNfts";
 import Image from "next/image";
+import Link from "next/link";
 
 const MoreFromArtist = () => {
   return (
     <SectionWrapper className="bg-[#2B2B2B] text-white pt-10 pb-32 py-24">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-14 gap-6">
         <h2 className="text-[38px] font-semibold">More From This Artist</h2>
-        <button className="flex items-center gap-4 border border-[#A259FF] text-white px-6 py-3 rounded-[20px] transition-transform duration-300 hover:scale-95">
+        <Link href="/artist-page" className="flex items-center gap-4 border border-[#A259FF] text-white px-6 py-3 rounded-[20px] transition-transform duration-300 hover:scale-95">
           <img src="/icons/ArrowRight.png" alt="arrow" className="w-5 h-5" />
           <span>Go To Artist Page</span>
           
-        </button>
+        </Link>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">

@@ -11,7 +11,7 @@ export default function DiscoverNFTs() {
             <h2 className="text-4xl font-bold mb-2">Discover More NFTs</h2>
             <p className="text-grayText">Explore New Trending NFTs</p>
           </div>
-          <Link href="/marketplace" className="border-2 border-[#A259FF] text-white rounded-[20px] px-10 py-4 flex items-center gap-4 hover:scale-95 transition-transform duration-300">
+          <Link href="/marketplace" className="border-2 border-[#A259FF] text-white rounded-[20px] px-12 py-4 flex items-center gap-4 hover:scale-95 transition-transform duration-300">
             <img src="/icons/Eye.png" alt="see all" className="w-4 h-4" />
             <span className="text-sm font-semibold">See All</span>
           </Link>

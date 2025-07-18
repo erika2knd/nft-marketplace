@@ -29,15 +29,15 @@ body {
 
 @keyframes wiggleSmooth {
   0% {
-    transform: rotateY(-15deg);
+    transform: rotateY(-18deg);
   }
 
   50% {
-    transform: rotateY(15deg);
+    transform: rotateY(18deg);
   }
 
   100% {
-    transform: rotateY(-15deg);
+    transform: rotateY(-18deg);
   }
 }
 
