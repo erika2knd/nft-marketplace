@@ -4,10 +4,13 @@ import SectionWrapper from "@/components/SectionWrapper";
 
 const MarketplaceHero = () => {
   const [activeTab, setActiveTab] = useState("NFTs");
-  const tabs = ["NFTs", "Collections"];
+  const tabs = [
+    { label: "NFTs", count: 302 },
+    { label: "Collections", count: 67 },
+  ];
 
   return (
-    <SectionWrapper className="pt-16 pb-0 bg-[#2B2B2B]">
+    <SectionWrapper className="overflow-hidden pt-16 pb-0 bg-[#2B2B2B]">
       <h1 className="text-[38px] lg:text-[51px] font-semibold mb-3">
         Browse Marketplace
       </h1>
@@ -15,7 +18,7 @@ const MarketplaceHero = () => {
         Browse through more than 50k NFTs on the NFT Marketplace.
       </p>
 
-      <div className="w-full mb-12">
+      <div className="w-full mb-10">
         <div className="border border-[#3B3B3B] rounded-[20px] flex items-center px-5 py-4 w-full">
           <input
             type="text"
@@ -29,25 +32,34 @@ const MarketplaceHero = () => {
           />
         </div>
       </div>
-      <div className="bg-[#2B2B2B]">
-      <div className="grid grid-cols-2 text-center text-[25px] font-semibold text-[#858584] mb-8">
-        {tabs.map((tab) => (
-          <button
-            key={tab}
-            onClick={() => setActiveTab(tab)}
-            className={`py-2 ${
-              activeTab === tab ? "text-white border-b-2 border-white" : ""
-            }`}
-          >
-            {tab}
-          </button>
-        ))}
-      </div>
-      </div>
+
+      
+        <div className="flex justify-center gap-10 text-[25px] font-semibold text-[#858584]">
+          {tabs.map((tab) => {
+            const isActive = activeTab === tab.label;
+            return (
+              <button
+                key={tab.label}
+                onClick={() => setActiveTab(tab.label)}
+                className={`flex items-center gap-3 pb-4 transition ${
+                  isActive ? "text-white border-b-2 border-white" : ""
+                }`}
+              >
+                {tab.label}
+                <span className="bg-[#3B3B3B] text-sm rounded-full px-3 py-1">
+                  {tab.count}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+      
+      
     </SectionWrapper>
   );
 };
 
 export default MarketplaceHero;
+
 
 

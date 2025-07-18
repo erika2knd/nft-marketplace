@@ -1,26 +1,61 @@
+'use client';
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
-    <header className="bg-[#2B2B2B] text-white py-4 px-6 lg:px-24">
+    <header className="bg-[#2B2B2B] text-white py-4 px-4 sm:px-6 lg:px-24">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <Link href="/" className="flex items-center gap-3">
           <img src="/icons/Storefront-colour.png" alt="Logo" className="w-8 h-8" />
-          <span className="font-bold text-xl">NFT Marketplace</span>
+          <span className="font-bold text-lg sm:text-xl">NFT Marketplace</span>
         </Link>
-        <div className="hidden md:flex items-center gap-10">
-          <nav className="flex items-center gap-10 text-gray-300 font-medium">
+
+        <div className="hidden md:flex items-center gap-6 lg:gap-10">
+          <nav className="flex items-center gap-6 lg:gap-10 text-gray-300 font-medium">
             <Link href="/marketplace" className="hover:text-white transition">Marketplace</Link>
             <Link href="/rankings" className="hover:text-white transition">Rankings</Link>
             <Link href="/connect-wallet" className="hover:text-white transition">Connect a Wallet</Link>
           </nav>
 
-          <Link href="/register" className="bg-[#A259FF] text-white px-[50px] py-[16px] rounded-[20px] flex items-center gap-2 hover:opacity-90 transition">
+          <Link
+            href="/register"
+            className="bg-[#A259FF] text-white px-6 lg:px-[50px] py-3 lg:py-[16px] rounded-[20px] flex items-center gap-2 hover:opacity-90 transition text-sm sm:text-base"
+          >
             <img src="/icons/User.png" alt="User" className="w-5 h-5" />
             Sign Up
           </Link>
         </div>
+
+        <button
+          className="md:hidden focus:outline-none"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          <img src="/icons/User.png" alt="Menu" className="w-6 h-6" />
+        </button>
       </div>
+
+      {menuOpen && (
+        <div className="md:hidden mt-4 px-4 space-y-4">
+          <nav className="flex flex-col gap-4 text-gray-300 font-medium">
+            <Link href="/marketplace" className="hover:text-white transition">Marketplace</Link>
+            <Link href="/rankings" className="hover:text-white transition">Rankings</Link>
+            <Link href="/connect-wallet" className="hover:text-white transition">Connect a Wallet</Link>
+          </nav>
+
+          <Link
+            href="/register"
+            className="block bg-[#A259FF] text-white px-6 py-3 rounded-[20px] text-center font-semibold hover:opacity-90 transition"
+          >
+            <div className="flex items-center justify-center gap-2">
+              <img src="/icons/User.png" alt="User" className="w-5 h-5" />
+              Sign Up
+            </div>
+          </Link>
+        </div>
+      )}
     </header>
   );
 }
