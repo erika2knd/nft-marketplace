@@ -33,7 +33,7 @@ export default function Header() {
           className="md:hidden focus:outline-none"
           onClick={() => setMenuOpen(!menuOpen)}
         >
-          <img src="/icons/User.png" alt="Menu" className="w-6 h-6" />
+          <img src="/icons/BurgerMenu.png" alt="Menu" className="w-6 h-6" />
         </button>
       </div>
 

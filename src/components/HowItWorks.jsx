@@ -8,7 +8,7 @@ export default function HowItWorks() {
       <h2 className="text-4xl font-bold mb-2">How It Works</h2>
       <p className="text-grayText mb-12">Find Out How To Get Started</p>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <div className="flex flex-col gap-6 md:grid md:grid-cols-3 md:gap-8">
         {howItWorksSteps.map((step, index) => (
           <HowItWorksCard key={index} {...step} />
         ))}
@@ -16,3 +16,4 @@ export default function HowItWorks() {
     </SectionWrapper>
   );
 }
+
