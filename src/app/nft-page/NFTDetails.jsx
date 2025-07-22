@@ -24,7 +24,30 @@ const NFTDetails = () => {
             <p className="text-[#858584] text-lg mb-6">
               Minted On Sep 30, 2022
             </p>
+            <div className="block lg:hidden bg-[#3B3B3B] rounded-[20px] p-6 mb-10">
+              <p className="text-[#CCCCCC] text-sm mb-4">Auction ends in:</p>
 
+              <div className="flex justify-center items-baseline gap-8 mb-6">
+                <div className="flex flex-col items-center">
+                  <p className="text-white text-[52px] font-bold leading-none">59</p>
+                  <span className="text-[#CCCCCC] text-sm">Hours</span>
+                </div>
+                <p className="text-white text-[56px] font-bold leading-none px-1">:</p>
+                <div className="flex flex-col items-center">
+                  <p className="text-white text-[56px] font-bold leading-none">59</p>
+                  <span className="text-[#CCCCCC] text-sm">Minutes</span>
+                </div>
+                <p className="text-white text-[56px] font-bold leading-none px-1">:</p>
+                <div className="flex flex-col items-center">
+                  <p className="text-white text-[56px] font-bold leading-none">59</p>
+                  <span className="text-[#CCCCCC] text-sm">Seconds</span>
+                </div>
+              </div>
+
+              <button className="w-full bg-[#A259FF] text-white text-[16px] font-semibold px-6 py-3 rounded-[20px] transition-transform hover:scale-95">
+                Place Bid
+              </button>
+            </div>
             <div className="mb-8">
               <p className="text-[#858584] text-lg mb-2">Created By</p>
               <div className="flex items-center gap-3">
@@ -85,12 +108,12 @@ const NFTDetails = () => {
 
               <div>
                 <h2 className="text-[#858584] font-semibold mb-3">Tags</h2>
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                   {["Animation", "Illustration", "Moon", "Moon"].map(
                     (tag, i) => (
                       <button
                         key={i}
-                        className="bg-[#3B3B3B] text-white px-5 py-3 rounded-full text-base transition-transform duration-500 hover:scale-95"
+                        className="bg-[#3B3B3B] text-white px-5 py-3 rounded-full text-base transition-transform duration-500 hover:scale-95 self-start"
                       >
                         {tag.toUpperCase()}
                       </button>
@@ -101,7 +124,7 @@ const NFTDetails = () => {
             </div>
           </div>
 
-          <div className="bg-[#3B3B3B] rounded-[20px] w-[295px] h-[235px] p-6 flex flex-col justify-between items-left">
+          <div className="hidden lg:flex bg-[#3B3B3B] rounded-[20px] w-[295px] h-[235px] p-6 flex flex-col justify-between">
             <p className="text-[#CCCCCC] text-sm">Auction ends in:</p>
 
             <div className="flex justify-center items-baseline gap-3">

@@ -31,11 +31,9 @@ export default function ArtistPage() {
 
       <SectionWrapper className="pt-[100px] bg-[#2B2B2B]">
   <div className="flex flex-col lg:flex-row justify-between items-start gap-6">
-    {/* Левая часть: Ник, кнопки, статистика, био, ссылки */}
     <div className="w-full lg:w-auto flex-1">
       <h1 className="text-4xl font-bold mb-4 text-center lg:text-left">Animakid</h1>
 
-      {/* Кнопки: по центру в мобайле, справа в десктопе */}
       <div className="flex flex-col sm:flex-row lg:hidden gap-4 mb-6 justify-center">
         <button className="bg-[#A259FF] text-white px-6 py-3 rounded-[20px] flex items-center justify-center gap-2 transition-transform hover:scale-95">
           <img src="/icons/Copy.png" alt="Copy" />
@@ -47,7 +45,7 @@ export default function ArtistPage() {
         </button>
       </div>
 
-      <div className="flex justify-between lg:justify-start gap-10 text-center mb-8 w-full">
+      <div className="flex justify-between lg:justify-start gap-8 text-center mb-8 w-full">
         <div>
           <p className="text-xl font-semibold">250k+</p>
           <p className="text-gray-400 text-sm">Volume</p>
@@ -93,7 +91,6 @@ export default function ArtistPage() {
 
 
 
-        {/* Tabs */}
         <div className="border-t border-[#3B3B3B] mt-12 pt-6">
           <div className="flex justify-center gap-14 text-gray-400 font-semibold text-lg">
             <div className="relative flex flex-col items-center cursor-pointer">
