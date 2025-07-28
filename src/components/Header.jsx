@@ -13,16 +13,23 @@ export default function Header() {
           <span className="font-bold text-lg sm:text-xl">NFT Marketplace</span>
         </Link>
 
-        <div className="hidden md:flex items-center gap-6 lg:gap-10">
+        <div className="hidden md:flex items-center gap-4 lg:gap-6">
           <nav className="flex items-center gap-6 lg:gap-10 text-gray-300 font-medium">
-            <Link href="/marketplace" className="hover:text-white transition">Marketplace</Link>
-            <Link href="/rankings" className="hover:text-white transition">Rankings</Link>
+            <Link href="/marketplace" className="transition-transform duration-300 hover:text-white">Marketplace</Link>
+            <Link href="/rankings" className="transition-transform duration-300 hover:text-white">Rankings</Link>
             <Link href="/connect-wallet" className="hover:text-white transition">Connect a Wallet</Link>
           </nav>
 
           <Link
+            href="/login"
+            className="text-white px-6 py-2 rounded-[20px] font-medium transition-transform duration-300 hover:scale-95 text-sm sm:text-base"
+          >
+            Log In
+          </Link>
+
+          <Link
             href="/register"
-            className="bg-[#A259FF] text-white px-6 lg:px-[50px] py-3 lg:py-[16px] rounded-[20px] flex items-center gap-2 hover:opacity-90 transition text-sm sm:text-base"
+            className="bg-[#A259FF] text-white px-6 lg:px-[50px] py-3 lg:py-[16px] rounded-[20px] flex items-center gap-2 transition-transform duration-300 hover:scale-95 text-sm sm:text-base"
           >
             <img src="/icons/User.png" alt="User" className="w-5 h-5" />
             Sign Up
@@ -46,8 +53,15 @@ export default function Header() {
           </nav>
 
           <Link
+            href="/login"
+            className="block bg-[#A259FF] text-white px-6 py-3 rounded-[20px] text-center font-semibold transition-transform duration-300 hover:scale-95"
+          >
+            Log In
+          </Link>
+
+          <Link
             href="/register"
-            className="block bg-[#A259FF] text-white px-6 py-3 rounded-[20px] text-center font-semibold hover:opacity-90 transition"
+            className="block bg-[#A259FF] text-white px-6 py-3 rounded-[20px] text-center font-semibold transition-transform duration-300 hover:scale-95"
           >
             <div className="flex items-center justify-center gap-2">
               <img src="/icons/User.png" alt="User" className="w-5 h-5" />
@@ -59,5 +73,4 @@ export default function Header() {
     </header>
   );
 }
-
 

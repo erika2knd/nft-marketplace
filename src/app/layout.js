@@ -1,8 +1,8 @@
+import "../../firebase";
 import "./globals.css";
 import { Work_Sans } from "next/font/google";
 import Header from "../components/Header";
 
-// Подключаем Work Sans из Google Fonts
 const workSans = Work_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
@@ -24,6 +24,7 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+
 
 
 
