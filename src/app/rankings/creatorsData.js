@@ -2,7 +2,7 @@ const creatorsData = [
   {
     id: 1,
     name: "Jaydon Ekstrom Bothman",
-    avatar: "/Icons/Keepitreal.png",
+    avatar: "/icons/Keepitreal.png",
     change: "+1.41%",
     nftsSold: 602,
     volume: "12.4 ETH",
@@ -10,7 +10,7 @@ const creatorsData = [
   {
     id: 2,
     name: "Ruben Carder",
-    avatar: "/Icons/Digilab.png",
+    avatar: "/icons/Digilab.png",
     change: "+2.15%",
     nftsSold: 489,
     volume: "9.8 ETH",
@@ -18,7 +18,7 @@ const creatorsData = [
   {
     id: 3,
     name: "Alfredo Septimus",
-    avatar: "/Icons/gravityone.png",
+    avatar: "/icons/gravityone.png",
     change: "+0.75%",
     nftsSold: 721,
     volume: "14.1 ETH",
@@ -26,7 +26,7 @@ const creatorsData = [
   {
     id: 4,
     name: "Davis Franci",
-    avatar: "/Icons/juani.png",
+    avatar: "/icons/juani.png",
     change: "+3.42%",
     nftsSold: 610,
     volume: "11.2 ETH",
@@ -34,7 +34,7 @@ const creatorsData = [
   {
     id: 5,
     name: "Livia Rosser",
-    avatar: "/Icons/blue.png",
+    avatar: "/icons/blue.png",
     change: "+1.25%",
     nftsSold: 456,
     volume: "8.5 ETH",
@@ -42,7 +42,7 @@ const creatorsData = [
   {
     id: 6,
     name: "Kianna Donin",
-    avatar: "/Icons/fox.png",
+    avatar: "/icons/fox.png",
     change: "+1.25%",
     nftsSold: 456,
     volume: "8.5 ETH",
@@ -50,7 +50,7 @@ const creatorsData = [
   {
     id: 7,
     name: "Phillip Lipshutz",
-    avatar: "/Icons/Asian-man.png",
+    avatar: "/icons/Asian-man.png",
     change: "+1.25%",
     nftsSold: 456,
     volume: "8.5 ETH",
@@ -58,7 +58,7 @@ const creatorsData = [
   {
     id: 8,
     name: "Maria Rossen",
-    avatar: "/Icons/robotica.png",
+    avatar: "/icons/robotica.png",
     change: "+1.25%",
     nftsSold: 456,
     volume: "8.5 ETH",
@@ -66,7 +66,7 @@ const creatorsData = [
   {
     id: 9,
     name: "Kianna Stanton",
-    avatar: "/Icons/rusty.png",
+    avatar: "/icons/rusty.png",
     change: "+1.25%",
     nftsSold: 456,
     volume: "8.5 ETH",
@@ -74,7 +74,7 @@ const creatorsData = [
   {
     id: 10,
     name: "Angel Lubin",
-    avatar: "/Icons/Nebulakid.png",
+    avatar: "/icons/Nebulakid.png",
     change: "+1.25%",
     nftsSold: 456,
     volume: "8.5 ETH",
@@ -82,7 +82,7 @@ const creatorsData = [
   {
     id: 11,
     name: "Allison Torff",
-    avatar: "/Icons/Allison.png",
+    avatar: "/icons/Allison.png",
     change: "+1.25%",
     nftsSold: 456,
     volume: "8.5 ETH",
@@ -90,7 +90,7 @@ const creatorsData = [
   {
     id: 12,
     name: "Davis Workman",
-    avatar: "/Icons/robot.png",
+    avatar: "/icons/robot.png",
     change: "+1.25%",
     nftsSold: 456,
     volume: "8.5 ETH",
@@ -98,7 +98,7 @@ const creatorsData = [
   {
     id: 13,
     name: "Lindsey Lipshutz",
-    avatar: "/Icons/puppy.png",
+    avatar: "/icons/puppy.png",
     change: "+1.25%",
     nftsSold: 456,
     volume: "8.5 ETH",
@@ -106,7 +106,7 @@ const creatorsData = [
   {
     id: 14,
     name: "Randy Carder",
-    avatar: "/Icons/Animakid.png",
+    avatar: "/icons/Animakid.png",
     change: "+1.25%",
     nftsSold: 456,
     volume: "8.5 ETH",
@@ -114,7 +114,7 @@ const creatorsData = [
   {
     id: 15,
     name: "Lydia Culhane",
-    avatar: "/Icons/dotku.png",
+    avatar: "/icons/dotku.png",
     change: "+1.25%",
     nftsSold: 456,
     volume: "8.5 ETH",
@@ -122,7 +122,7 @@ const creatorsData = [
   {
     id: 16,
     name: "Rayna Bator",
-    avatar: "/Icons/MoonDancer.png",
+    avatar: "/icons/MoonDancer.png",
     change: "+1.25%",
     nftsSold: 456,
     volume: "8.5 ETH",
@@ -130,7 +130,7 @@ const creatorsData = [
   {
     id: 17,
     name: "Jucelyn Westervelt",
-    avatar: "/Icons/ghibler.png",
+    avatar: "/icons/ghibler.png",
     change: "+1.25%",
     nftsSold: 456,
     volume: "8.5 ETH",
@@ -138,7 +138,7 @@ const creatorsData = [
   {
     id: 18,
     name: "Marilyn Torff",
-    avatar: "/Icons/Keepitreal.png",
+    avatar: "/icons/Keepitreal.png",
     change: "+1.25%",
     nftsSold: 456,
     volume: "8.5 ETH",
@@ -146,7 +146,7 @@ const creatorsData = [
   {
     id: 19,
     name: "Skylar Levin",
-    avatar: "/Icons/Nebulakid.png",
+    avatar: "/icons/Nebulakid.png",
     change: "+1.25%",
     nftsSold: 456,
     volume: "8.5 ETH",
@@ -154,7 +154,7 @@ const creatorsData = [
   {
     id: 20,
     name: "Terry Dorwart",
-    avatar: "/Icons/gravityone.png",
+    avatar: "/icons/gravityone.png",
     change: "+1.25%",
     nftsSold: 456,
     volume: "8.5 ETH",

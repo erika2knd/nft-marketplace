@@ -70,7 +70,7 @@ export default function ArtistPage() {
         <div className="flex justify-start gap-4">
           <img src="/icons/Globe.png" alt="Globe" />
           <img src="/icons/DiscordLogo.png" alt="Discord" />
-          <img src="/icons/YouTubeLogo.png" alt="YouTube" />
+          <img src="/icons/YoutubeLogo.png" alt="YouTube" />
           <img src="/icons/TwitterLogo.png" alt="Twitter" />
           <img src="/icons/InstagramLogo.png" alt="Instagram" />
         </div>

@@ -16,7 +16,7 @@ export default function HighlightedNFT() {
 
           <div className="flex flex-col gap-6 w-full md:w-auto">
             <div className="bg-[#3B3E47] px-4 py-2 rounded-full flex items-center gap-2 w-fit">
-              <img src="/icons/Shroomie.png" alt="Shroomie" className="w-6 h-6 rounded-full" />
+              <img src="/icons/shroomie.png" alt="Shroomie" className="w-6 h-6 rounded-full" />
               <span className="text-sm font-medium">Shroomie</span>
             </div>
 

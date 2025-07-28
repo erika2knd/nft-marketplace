@@ -7,7 +7,7 @@ const collections = [
     author: "MrFox",
     authorAvatar: "/icons/MrFox.png",
     count: "1025",
-    images: ["/images/dog.png", "/images/cat.png", "/images/bear.png"],
+    images: ["/images/Dog.png", "/images/cat.png", "/images/bear.png"],
   },
   {
     title: "Magic Mushrooms",

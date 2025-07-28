@@ -85,7 +85,7 @@ const NFTDetails = () => {
                 <ul className="space-y-2">
                   <li className="flex items-center gap-2 text-white text-lg">
                     <img
-                      src="/icons/globe.png"
+                      src="/icons/Globe.png"
                       className="w-4 h-4"
                       alt="etherscan"
                     />
@@ -95,7 +95,7 @@ const NFTDetails = () => {
                   </li>
                   <li className="flex items-center gap-2 text-white text-lg">
                     <img
-                      src="/icons/globe.png"
+                      src="/icons/Globe.png"
                       className="w-4 h-4"
                       alt="original"
                     />
