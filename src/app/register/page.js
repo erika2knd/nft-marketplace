@@ -25,7 +25,7 @@ export default function RegisterPage() {
               creating, collecting and selling NFTs.
             </p>
 
-            <form className="flex flex-col gap-4 w-full">
+            <form className="flex flex-col gap-4 w-full max-w-full lg:max-w-[400px]">
               <Input placeholder="Username" icon="/icons/UserName.png" />
               <Input placeholder="Email Address" icon="/icons/Email.png" />
               <Input placeholder="Password" icon="/icons/LockKey.png" type="password" />
