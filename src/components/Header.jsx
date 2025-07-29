@@ -1,9 +1,22 @@
-'use client';
+"use client";
 import Link from "next/link";
 import { useState } from "react";
+import { useUser } from "@/context/UserContext";
+import { signOut } from "firebase/auth";
+import { auth } from "../../firebase";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { user } = useUser();
+
+  const handleLogout = async () => {
+    try {
+      await signOut(auth);
+      console.log("Logged out");
+    } catch (error) {
+      console.error("Logout error:", error.message);
+    }
+  };
 
   return (
     <header className="bg-[#2B2B2B] text-white py-4 px-4 sm:px-6 lg:px-24">
@@ -15,25 +28,40 @@ export default function Header() {
 
         <div className="hidden md:flex items-center gap-4 lg:gap-6">
           <nav className="flex items-center gap-6 lg:gap-10 text-gray-300 font-medium">
-            <Link href="/marketplace" className="transition-transform duration-300 hover:text-white">Marketplace</Link>
-            <Link href="/rankings" className="transition-transform duration-300 hover:text-white">Rankings</Link>
+            <Link href="/marketplace" className="hover:text-white transition">Marketplace</Link>
+            <Link href="/rankings" className="hover:text-white transition">Rankings</Link>
             <Link href="/connect-wallet" className="hover:text-white transition">Connect a Wallet</Link>
           </nav>
 
-          <Link
-            href="/login"
-            className="text-white px-6 py-2 rounded-[20px] font-medium transition-transform duration-300 hover:scale-95 text-sm sm:text-base"
-          >
-            Log In
-          </Link>
-
-          <Link
-            href="/register"
-            className="bg-[#A259FF] text-white px-6 lg:px-[50px] py-3 lg:py-[16px] rounded-[20px] flex items-center gap-2 transition-transform duration-300 hover:scale-95 text-sm sm:text-base"
-          >
-            <img src="/icons/User.png" alt="User" className="w-5 h-5" />
-            Sign Up
-          </Link>
+          {user ? (
+            <>
+              <span className="text-sm sm:text-base font-medium">
+                {user.displayName || user.email}
+              </span>
+              <button
+                onClick={handleLogout}
+                className="text-white px-6 py-2 rounded-[20px] font-medium transition-transform duration-300 hover:scale-95 text-sm sm:text-base"
+              >
+                Log Out
+              </button>
+            </>
+          ) : (
+            <>
+              <Link
+                href="/login"
+                className="text-white px-6 py-2 rounded-[20px] font-medium transition-transform duration-300 hover:scale-95 text-sm sm:text-base"
+              >
+                Log In
+              </Link>
+              <Link
+                href="/register"
+                className="bg-[#A259FF] text-white px-6 lg:px-[50px] py-3 lg:py-[16px] rounded-[20px] flex items-center gap-2 transition-transform duration-300 hover:scale-95 text-sm sm:text-base"
+              >
+                <img src="/icons/User.png" alt="User" className="w-5 h-5" />
+                Sign Up
+              </Link>
+            </>
+          )}
         </div>
 
         <button
@@ -52,25 +80,41 @@ export default function Header() {
             <Link href="/connect-wallet" className="hover:text-white transition">Connect a Wallet</Link>
           </nav>
 
-          <Link
-            href="/login"
-            className="block bg-[#A259FF] text-white px-6 py-3 rounded-[20px] text-center font-semibold transition-transform duration-300 hover:scale-95"
-          >
-            Log In
-          </Link>
-
-          <Link
-            href="/register"
-            className="block bg-[#A259FF] text-white px-6 py-3 rounded-[20px] text-center font-semibold transition-transform duration-300 hover:scale-95"
-          >
-            <div className="flex items-center justify-center gap-2">
-              <img src="/icons/User.png" alt="User" className="w-5 h-5" />
-              Sign Up
-            </div>
-          </Link>
+          {user ? (
+            <>
+              <div className="text-white mt-4 font-medium">
+                {user.displayName || user.email}
+              </div>
+              <button
+                onClick={handleLogout}
+                className="block bg-[#A259FF] text-white px-6 py-3 rounded-[20px] text-center font-semibold transition-transform duration-300 hover:scale-95"
+              >
+                Log Out
+              </button>
+            </>
+          ) : (
+            <>
+              <Link
+                href="/login"
+                className="block bg-[#A259FF] text-white px-6 py-3 rounded-[20px] text-center font-semibold transition-transform duration-300 hover:scale-95"
+              >
+                Log In
+              </Link>
+              <Link
+                href="/register"
+                className="block bg-[#A259FF] text-white px-6 py-3 rounded-[20px] text-center font-semibold transition-transform duration-300 hover:scale-95"
+              >
+                <div className="flex items-center justify-center gap-2">
+                  <img src="/icons/User.png" alt="User" className="w-5 h-5" />
+                  Sign Up
+                </div>
+              </Link>
+            </>
+          )}
         </div>
       )}
     </header>
   );
 }
+
 

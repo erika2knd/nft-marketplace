@@ -77,6 +77,7 @@ export default function RegisterPage() {
                 const user = userCredential.user;
 
                 await updateProfile(user, { displayName: username });
+                await auth.currentUser.reload();
                 console.log("Registered user:", user);
                 setMessage("Registration successful");
                 setMessageType("success");
