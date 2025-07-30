@@ -4,6 +4,7 @@ import { db } from "../../../../firebase";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { useUser } from "@/context/UserContext";
 import { useRouter } from "next/navigation";
+import Footer from "@/components/Footer";
 
 export default function CreateNFTPage() {
   const [title, setTitle] = useState("");
@@ -61,7 +62,7 @@ export default function CreateNFTPage() {
   };
 
   return (
-    <main className="min-h-screen bg-[#2B2B2B] text-white py-12 px-6 lg:px-24">
+    <main className="min-h-screen bg-[#2B2B2B] text-white px-6 py-12 lg:px-24">
       <h1 className="text-3xl font-bold mb-6">Create New NFT</h1>
 
       {message && (
@@ -79,7 +80,7 @@ export default function CreateNFTPage() {
           placeholder="NFT Title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
-          className="px-4 py-3 rounded bg-white text-black placeholder-gray-400"
+          className="px-4 py-3 rounded-[20px] bg-white text-black placeholder-gray-400"
         />
 
         <input
@@ -87,7 +88,7 @@ export default function CreateNFTPage() {
           placeholder="Image URL"
           value={imageUrl}
           onChange={(e) => setImageUrl(e.target.value)}
-          className="px-4 py-3 rounded bg-white text-black placeholder-gray-400"
+          className="px-4 py-3 rounded-[20px] bg-white text-black placeholder-gray-400"
         />
 
         <input
@@ -95,7 +96,7 @@ export default function CreateNFTPage() {
           placeholder="Price (e.g. 1.63 ETH)"
           value={price}
           onChange={(e) => setPrice(e.target.value)}
-          className="px-4 py-3 rounded bg-white text-black placeholder-gray-400"
+          className="px-4 py-3 rounded-[20px] bg-white text-black placeholder-gray-400"
         />
 
         <input
@@ -103,7 +104,7 @@ export default function CreateNFTPage() {
           placeholder="Highest Bid (e.g. 0.33 wETH)"
           value={highestBid}
           onChange={(e) => setHighestBid(e.target.value)}
-          className="px-4 py-3 rounded bg-white text-black placeholder-gray-400"
+          className="px-4 py-3 rounded-[20px] bg-white text-black placeholder-gray-400"
         />
 
         <input
@@ -111,7 +112,7 @@ export default function CreateNFTPage() {
           placeholder="Author Name"
           value={author}
           onChange={(e) => setAuthor(e.target.value)}
-          className="px-4 py-3 rounded bg-white text-black placeholder-gray-400"
+          className="px-4 py-3 rounded-[20px] bg-white text-black placeholder-gray-400"
         />
 
         <input
@@ -119,16 +120,18 @@ export default function CreateNFTPage() {
           placeholder="Author Image URL"
           value={authorImage}
           onChange={(e) => setAuthorImage(e.target.value)}
-          className="px-4 py-3 rounded bg-white text-black placeholder-gray-400"
+          className="px-4 py-3 rounded-[20px] bg-white text-black placeholder-gray-400"
         />
 
         <button
           type="submit"
-          className="bg-[#A259FF] text-white py-3 rounded font-semibold hover:scale-95 transition"
+          className="bg-[#A259FF] text-white py-3 rounded-[20px] font-semibold hover:scale-95 transition"
         >
           Create NFT
         </button>
       </form>
     </main>
+    
+    
   );
 }

@@ -29,7 +29,7 @@ export default function NFTCard({
       <button
         onClick={() => setShowConfirm(true)}
         className="absolute top-2 right-2 text-white bg-black bg-opacity-50 hover:bg-opacity-80 rounded-full w-6 h-6 flex items-center justify-center text-sm"
-        title="Удалить"
+        title="Delete"
       >
         ×
       </button>

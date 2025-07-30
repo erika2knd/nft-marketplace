@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { db } from "../../../firebase";
+import { db } from "../../../firebase"; // или "@/firebase" если используешь алиас
 import { collection, getDocs, query, orderBy } from "firebase/firestore";
 import NFTCard from "./NFTCard";
 
@@ -47,7 +47,8 @@ export default function NFTListPage() {
               author={nft.author}
               authorAvatar={nft.authorImage}
               price={nft.price}
-              highestBid={nft.highestBid}
+              highestBid={nft.highestBid || nft.bid} 
+              createdBy={nft.createdBy}               
             />
           ))}
         </div>
@@ -55,3 +56,4 @@ export default function NFTListPage() {
     </main>
   );
 }
+
