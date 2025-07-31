@@ -4,7 +4,17 @@ import { db } from "../../../../firebase";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { useUser } from "@/context/UserContext";
 import { useRouter } from "next/navigation";
-import Footer from "@/components/Footer";
+
+
+
+const toSlug = (s) =>
+  (s || "")
+    .toString()
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, "")
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-");
 
 export default function CreateNFTPage() {
   const [title, setTitle] = useState("");
@@ -13,6 +23,9 @@ export default function CreateNFTPage() {
   const [highestBid, setHighestBid] = useState("");
   const [author, setAuthor] = useState("");
   const [authorImage, setAuthorImage] = useState("");
+
+  const [collectionName, setCollectionName] = useState("");
+
   const [message, setMessage] = useState("");
   const { user } = useUser();
   const router = useRouter();
@@ -27,7 +40,8 @@ export default function CreateNFTPage() {
       !price ||
       !highestBid ||
       !author ||
-      !authorImage
+      !authorImage ||
+      !collectionName 
     ) {
       setMessage("Please fill in all fields");
       return;
@@ -41,6 +55,10 @@ export default function CreateNFTPage() {
         highestBid,
         author,
         authorImage,
+        
+        collectionName,
+        collectionSlug: toSlug(collectionName),
+
         createdAt: serverTimestamp(),
         createdBy: user?.uid,
         userName: user?.displayName || user?.email,
@@ -53,6 +71,7 @@ export default function CreateNFTPage() {
       setHighestBid("");
       setAuthor("");
       setAuthorImage("");
+      setCollectionName(""); 
 
       router.push("/nfts");
     } catch (error) {
@@ -71,10 +90,7 @@ export default function CreateNFTPage() {
         </div>
       )}
 
-      <form
-        onSubmit={handleSubmit}
-        className="max-w-xl mx-auto flex flex-col gap-4"
-      >
+      <form onSubmit={handleSubmit} className="max-w-xl mx-auto flex flex-col gap-4">
         <input
           type="text"
           placeholder="NFT Title"
@@ -123,6 +139,14 @@ export default function CreateNFTPage() {
           className="px-4 py-3 rounded-[20px] bg-white text-black placeholder-gray-400"
         />
 
+        <input
+          type="text"
+          placeholder="Collection Name (e.g. Cyber Apes)"
+          value={collectionName}
+          onChange={(e) => setCollectionName(e.target.value)}
+          className="px-4 py-3 rounded-[20px] bg-white text-black placeholder-gray-400"
+        />
+
         <button
           type="submit"
           className="bg-[#A259FF] text-white py-3 rounded-[20px] font-semibold hover:scale-95 transition"
@@ -130,8 +154,9 @@ export default function CreateNFTPage() {
           Create NFT
         </button>
       </form>
+
+     
     </main>
-    
-    
   );
 }
+

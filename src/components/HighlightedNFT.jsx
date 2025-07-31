@@ -1,7 +1,11 @@
+'use client';
 import SectionWrapper from "./SectionWrapper";
 import Link from "next/link";
+import CountdownLoopTimer from "@/components/CountdownLoopTimer";
 
 export default function HighlightedNFT() {
+  const pad = (n) => n.toString().padStart(2, "0");
+
   return (
     <SectionWrapper className="relative h-[700px] text-white overflow-hidden">
       <img
@@ -37,9 +41,23 @@ export default function HighlightedNFT() {
           <div className="w-full md:w-auto">
             <div className="bg-[#3B3E47]/70 px-6 md:px-10 py-6 rounded-[20px] text-center w-full md:w-fit">
               <p className="text-base text-gray-300 mb-1">Auction ends in:</p>
+
               <div className="flex gap-4 justify-center text-[60px] md:text-[40px] font-bold">
-                <span>59</span><span>:</span><span>59</span><span>:</span><span>59</span>
+                <CountdownLoopTimer
+                  periodSec={2 * 60 * 60}                
+                  storageKey="highlighted-auction-cycle" 
+                  render={({ hours, minutes, seconds }) => (
+                    <>
+                      <span>{pad(hours)}</span>
+                      <span>:</span>
+                      <span>{pad(minutes)}</span>
+                      <span>:</span>
+                      <span>{pad(seconds)}</span>
+                    </>
+                  )}
+                />
               </div>
+
               <div className="flex gap-14 text-lg justify-center mt-1 text-gray-400">
                 <span>Hours</span><span>Minutes</span><span>Seconds</span>
               </div>

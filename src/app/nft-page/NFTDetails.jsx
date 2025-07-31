@@ -1,5 +1,8 @@
 "use client";
 import SectionWrapper from "@/components/SectionWrapper";
+import CountdownLoopTimer from "@/components/CountdownLoopTimer";
+
+const pad = (n) => n.toString().padStart(2, "0");
 
 const NFTDetails = () => {
   return (
@@ -24,24 +27,44 @@ const NFTDetails = () => {
             <p className="text-[#858584] text-lg mb-6">
               Minted On Sep 30, 2022
             </p>
+
+            {/* --- Мобильный таймер --- */}
             <div className="block lg:hidden bg-[#3B3B3B] rounded-[20px] p-6 mb-10">
               <p className="text-[#CCCCCC] text-sm mb-4">Auction ends in:</p>
 
               <div className="flex justify-center items-baseline gap-8 mb-6">
-                <div className="flex flex-col items-center">
-                  <p className="text-white text-[52px] font-bold leading-none">59</p>
-                  <span className="text-[#CCCCCC] text-sm">Hours</span>
-                </div>
-                <p className="text-white text-[56px] font-bold leading-none px-1">:</p>
-                <div className="flex flex-col items-center">
-                  <p className="text-white text-[56px] font-bold leading-none">59</p>
-                  <span className="text-[#CCCCCC] text-sm">Minutes</span>
-                </div>
-                <p className="text-white text-[56px] font-bold leading-none px-1">:</p>
-                <div className="flex flex-col items-center">
-                  <p className="text-white text-[56px] font-bold leading-none">59</p>
-                  <span className="text-[#CCCCCC] text-sm">Seconds</span>
-                </div>
+                <CountdownLoopTimer
+                  periodSec={2 * 60 * 60}
+                  storageKey="nft-details-orbitians-auction"
+                  render={({ hours, minutes, seconds }) => (
+                    <>
+                      <div className="flex flex-col items-center">
+                        <p className="text-white text-[52px] font-bold leading-none">
+                          {pad(hours)}
+                        </p>
+                        <span className="text-[#CCCCCC] text-sm">Hours</span>
+                      </div>
+
+                      <p className="text-white text-[56px] font-bold leading-none px-1">:</p>
+
+                      <div className="flex flex-col items-center">
+                        <p className="text-white text-[56px] font-bold leading-none">
+                          {pad(minutes)}
+                        </p>
+                        <span className="text-[#CCCCCC] text-sm">Minutes</span>
+                      </div>
+
+                      <p className="text-white text-[56px] font-bold leading-none px-1">:</p>
+
+                      <div className="flex flex-col items-center">
+                        <p className="text-white text-[56px] font-bold leading-none">
+                          {pad(seconds)}
+                        </p>
+                        <span className="text-[#CCCCCC] text-sm">Seconds</span>
+                      </div>
+                    </>
+                  )}
+                />
               </div>
 
               <button className="w-full bg-[#A259FF] text-white text-[16px] font-semibold px-6 py-3 rounded-[20px] transition-transform hover:scale-95">
@@ -128,20 +151,38 @@ const NFTDetails = () => {
             <p className="text-[#CCCCCC] text-sm">Auction ends in:</p>
 
             <div className="flex justify-center items-baseline gap-3">
-              <div className="flex flex-col items-center">
-                <p className="text-white text-[38px] font-bold leading-none">59</p>
-                <span className="text-[#CCCCCC] text-sm">Hours</span>
-              </div>
-              <p className="text-white text-[38px] font-bold leading-none px-1">:</p>
-              <div className="flex flex-col items-center">
-                <p className="text-white text-[38px] font-bold leading-none">59</p>
-                <span className="text-[#CCCCCC] text-sm">Minutes</span>
-              </div>
-              <p className="text-white text-[38px] font-bold leading-none px-1">:</p>
-              <div className="flex flex-col items-center">
-                <p className="text-white text-[38px] font-bold leading-none">59</p>
-                <span className="text-[#CCCCCC] text-sm">Seconds</span>
-              </div>
+              <CountdownLoopTimer
+                periodSec={2 * 60 * 60}
+                storageKey="nft-details-orbitians-auction"
+                render={({ hours, minutes, seconds }) => (
+                  <>
+                    <div className="flex flex-col items-center">
+                      <p className="text-white text-[38px] font-bold leading-none">
+                        {pad(hours)}
+                      </p>
+                      <span className="text-[#CCCCCC] text-sm">Hours</span>
+                    </div>
+
+                    <p className="text-white text-[38px] font-bold leading-none px-1">:</p>
+
+                    <div className="flex flex-col items-center">
+                      <p className="text-white text-[38px] font-bold leading-none">
+                        {pad(minutes)}
+                      </p>
+                      <span className="text-[#CCCCCC] text-sm">Minutes</span>
+                    </div>
+
+                    <p className="text-white text-[38px] font-bold leading-none px-1">:</p>
+
+                    <div className="flex flex-col items-center">
+                      <p className="text-white text-[38px] font-bold leading-none">
+                        {pad(seconds)}
+                      </p>
+                      <span className="text-[#CCCCCC] text-sm">Seconds</span>
+                    </div>
+                  </>
+                )}
+              />
             </div>
 
             <button className="bg-[#A259FF] text-white text-[16px] font-semibold px-6 py-3 rounded-[20px] transition-transform hover:scale-95">
@@ -155,5 +196,6 @@ const NFTDetails = () => {
 };
 
 export default NFTDetails;
+   
 
 
