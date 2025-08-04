@@ -4,10 +4,10 @@ export default function NFTCard({ image, title, author, authorAvatar, price, bid
   return (
     <Link href="/nft-page">
     <div className="coursor-pointer bg-[#3B3E47] rounded-[20px] overflow-hidden w-full transition-transform duration-300 ease-in-out hover:scale-95">
-      <img src={image} alt={title} className="w-full h-[296px] object-cover" />
+      <img src={image} alt={title} className="w-full h-[200px] md:h-[296px] object-cover" />
 
-      <div className="p-5">
-        <h3 className="text-white text-lg font-semibold mb-2">{title}</h3>
+      <div className="p-5 h-[150px] md:h-[296px]">
+        <h3 className="text-white text-sm md:text-lg font-semibold mb-2">{title}</h3>
 
         <div className="flex items-center gap-2 mb-4">
           <img src={authorAvatar} alt={author} className="w-6 h-6 rounded-full" />

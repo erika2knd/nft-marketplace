@@ -22,7 +22,7 @@ export default function SubscribeSection() {
             <input
               type="email"
               placeholder="Enter Your Email Address"
-              className="w-full bg-white rounded-[20px] py-5 px-6 pr-44 text-base md:text-lg placeholder-gray-500"
+              className="w-full bg-white rounded-[20px] py-5 px-6 md:pr-44 text-sm md:text-lg placeholder-gray-500"
             />
 
             <button

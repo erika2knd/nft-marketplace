@@ -8,7 +8,7 @@ export default function TrendingCard({ images, title, author, authorAvatar, coun
         <img
           src={images[0]}
           alt={title}
-          className="w-full aspect-square object-cover rounded-t-[20px]"
+          className="w-full h-[200px] md:h-[300px] aspect-square object-cover rounded-[20px]"
         />
       </div>
 
@@ -17,12 +17,12 @@ export default function TrendingCard({ images, title, author, authorAvatar, coun
           <img
             src={images[1]}
             alt=""
-            className="w-full aspect-square rounded-[20px] object-cover transition-transform duration-300 ease-in-out hover:scale-95"
+            className="w-full h-[70px] md:h-[120px] aspect-square rounded-[20px] object-cover transition-transform duration-300 ease-in-out hover:scale-95"
           />
           <img
             src={images[2]}
             alt=""
-            className="w-full aspect-square rounded-[20px] object-cover transition-transform duration-300 ease-in-out hover:scale-95"
+            className="w-full h-[70px] md:h-[120px] aspect-square rounded-[20px] object-cover transition-transform duration-300 ease-in-out hover:scale-95"
           />
         </div>
 

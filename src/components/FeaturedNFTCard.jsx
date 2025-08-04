@@ -8,7 +8,7 @@ export default function FeaturedNFTCard() {
           <img
             src="/images/Image-Placeholder.jpg"
             alt="NFT"
-            className="w-full h-[300px] sm:h-[350px] md:h-[400px] object-cover"
+            className="w-full h-[200px] sm:h-[350px] md:h-[400px] object-cover"
           />
 
           <div className="p-5 sm:p-6">
