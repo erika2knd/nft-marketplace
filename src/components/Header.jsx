@@ -1,4 +1,5 @@
 "use client";
+
 import Link from "next/link";
 import { useState } from "react";
 import { useUser } from "@/context/UserContext";
@@ -19,7 +20,7 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-[#2B2B2B] text-white py-4 px-4 sm:px-6 lg:px-24">
+    <header className="bg-[#2B2B2B] text-white py-4 px-4 sm:px-6 lg:px-24 relative z-50">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <Link href="/" className="flex items-center gap-3">
           <img src="/icons/Storefront-colour.png" alt="Logo" className="w-8 h-8" />
@@ -65,52 +66,77 @@ export default function Header() {
         </div>
 
         <button
-          className="md:hidden focus:outline-none"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          <img src="/icons/BurgerMenu.png" alt="Menu" className="w-6 h-6" />
-        </button>
+  className="md:hidden focus:outline-none"
+  onClick={() => setMenuOpen(!menuOpen)}
+>
+  {menuOpen ? (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className="h-6 w-6 text-white"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      strokeWidth={2}
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+    </svg>
+  ) : (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className="h-6 w-6 text-white"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      strokeWidth={2}
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+    </svg>
+  )}
+</button>
+
       </div>
 
       {menuOpen && (
-        <div className="md:hidden mt-4 px-4 space-y-4">
+        <div className="md:hidden absolute top-full left-0 w-full bg-[#2B2B2B] z-50 px-4 py-6 shadow-lg transition-all duration-300">
           <nav className="flex flex-col gap-4 text-gray-300 font-medium">
             <Link href="/marketplace" className="hover:text-white transition">Marketplace</Link>
             <Link href="/rankings" className="hover:text-white transition">Rankings</Link>
             <Link href="/connect-wallet" className="hover:text-white transition">Connect a Wallet</Link>
           </nav>
 
-          {user ? (
-            <>
-              <div className="text-white mt-4 font-medium">
-                {user.displayName || user.email}
-              </div>
-              <button
-                onClick={handleLogout}
-                className="block bg-[#A259FF] text-white px-6 py-3 rounded-[20px] text-center font-semibold transition-transform duration-300 hover:scale-95"
-              >
-                Log Out
-              </button>
-            </>
-          ) : (
-            <>
-              <Link
-                href="/login"
-                className="block bg-[#A259FF] text-white px-6 py-3 rounded-[20px] text-center font-semibold transition-transform duration-300 hover:scale-95"
-              >
-                Log In
-              </Link>
-              <Link
-                href="/register"
-                className="block bg-[#A259FF] text-white px-6 py-3 rounded-[20px] text-center font-semibold transition-transform duration-300 hover:scale-95"
-              >
-                <div className="flex items-center justify-center gap-2">
-                  <img src="/icons/User.png" alt="User" className="w-5 h-5" />
-                  Sign Up
+          <div className="mt-6 flex flex-col gap-3">
+            {user ? (
+              <>
+                <div className="text-white font-medium">
+                  {user.displayName || user.email}
                 </div>
-              </Link>
-            </>
-          )}
+                <button
+                  onClick={handleLogout}
+                  className="bg-[#A259FF] text-white px-6 py-3 rounded-[20px] font-semibold transition-transform duration-300 hover:scale-95"
+                >
+                  Log Out
+                </button>
+              </>
+            ) : (
+              <>
+                <Link
+                  href="/login"
+                  className="bg-[#A259FF] text-white px-6 py-3 rounded-[20px] text-center font-semibold transition-transform duration-300 hover:scale-95"
+                >
+                  Log In
+                </Link>
+                <Link
+                  href="/register"
+                  className="bg-[#A259FF] text-white px-6 py-3 rounded-[20px] text-center font-semibold transition-transform duration-300 hover:scale-95"
+                >
+                  <div className="flex items-center justify-center gap-2">
+                    <img src="/icons/User.png" alt="User" className="w-5 h-5" />
+                    Sign Up
+                  </div>
+                </Link>
+              </>
+            )}
+          </div>
         </div>
       )}
     </header>

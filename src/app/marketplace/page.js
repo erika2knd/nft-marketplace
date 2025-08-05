@@ -8,6 +8,7 @@ import MarketplaceHero from "./MarketplaceHero";
 
 import { db } from "../../../firebase";
 import { collection, getDocs, query as fsQuery, orderBy } from "firebase/firestore";
+import useIsMobile from "@/hooks/useIsMobile";
 
 export default function MarketplacePage() {
   const [nfts, setNfts] = useState([]);
@@ -21,6 +22,8 @@ export default function MarketplacePage() {
   }, [query]);
 
   const [activeTab, setActiveTab] = useState("NFTs");
+  const [showAll, setShowAll] = useState(false);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const fetchNFTs = async () => {
@@ -72,7 +75,7 @@ export default function MarketplacePage() {
         map.set(key, {
           id: key,
           name: n.collectionName || "Untitled Collection",
-          cover: n.image,     
+          cover: n.image,
           author: n.author,
           itemsCount: 1,
         });
@@ -93,15 +96,25 @@ export default function MarketplacePage() {
     });
   }, [collections, debounced]);
 
+  const visibleNFTs = useMemo(() => {
+    if (!isMobile) return filteredNfts;
+    return showAll ? filteredNfts : filteredNfts.slice(0, 5);
+  }, [filteredNfts, isMobile, showAll]);
+
+  const visibleCollections = useMemo(() => {
+    if (!isMobile) return filteredCollections;
+    return showAll ? filteredCollections : filteredCollections.slice(0, 5);
+  }, [filteredCollections, isMobile, showAll]);
+
   const gridContent =
     activeTab === "NFTs" ? (
-      filteredNfts.length === 0 ? (
+      visibleNFTs.length === 0 ? (
         <p className="text-[#858584]">
           {query ? <>No NFTs found for “{query}”.</> : <>No NFTs found.</>}
         </p>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8">
-          {filteredNfts.map((nft) => (
+          {visibleNFTs.map((nft) => (
             <NFTCard
               key={nft.id}
               title={nft.title}
@@ -114,13 +127,13 @@ export default function MarketplacePage() {
           ))}
         </div>
       )
-    ) : filteredCollections.length === 0 ? (
+    ) : visibleCollections.length === 0 ? (
       <p className="text-[#858584]">
         {query ? <>No collections found for “{query}”.</> : <>No collections found.</>}
       </p>
     ) : (
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8">
-        {filteredCollections.map((c) => (
+        {visibleCollections.map((c) => (
           <div
             key={c.id}
             className="bg-[#3B3B3B] rounded-2xl overflow-hidden border border-[#4A4A4A]"
@@ -142,23 +155,41 @@ export default function MarketplacePage() {
       </div>
     );
 
+  const hasMoreThanFive =
+    activeTab === "NFTs" ? filteredNfts.length > 5 : filteredCollections.length > 5;
+
   return (
     <main>
       <MarketplaceHero
         query={query}
         onQueryChange={setQuery}
-
         activeTab={activeTab}
         onTabChange={setActiveTab}
-
         nftsTotal={nfts.length}
         nftsResults={filteredNfts.length}
         collectionsTotal={collections.length}
         collectionsResults={filteredCollections.length}
       />
 
-      <SectionWrapper className="bg-[#2B2B2B] text-white pt-12 pb-24">
-        {loading ? <p className="text-[#858584]">Loading...</p> : gridContent}
+      <SectionWrapper className="bg-[#2B2B2B] text-white " noPaddingTop>
+        {loading ? (
+          <p className="text-[#858584]">Loading...</p>
+        ) : (
+          <>
+            {gridContent}
+
+            {isMobile && hasMoreThanFive && (
+              <div className="flex justify-center mt-8">
+                <button
+                  onClick={() => setShowAll((prev) => !prev)}
+                  className="text-sm text-[#A259FF] font-semibold border border-[#A259FF] px-6 py-2 rounded-[20px] transition hover:bg-[#A259FF]/10"
+                >
+                  {showAll ? "Show Less" : "Show All"}
+                </button>
+              </div>
+            )}
+          </>
+        )}
       </SectionWrapper>
 
       <Footer />

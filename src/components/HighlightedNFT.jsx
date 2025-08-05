@@ -7,7 +7,7 @@ export default function HighlightedNFT() {
   const pad = (n) => n.toString().padStart(2, "0");
 
   return (
-    <SectionWrapper className="relative h-[700px] text-white overflow-hidden">
+    <SectionWrapper className="relative h-[600px] md:h-[700px] text-white overflow-hidden">
       <img
         src="/images/MushroomBig.png"
         alt="Magic Mushrooms"
@@ -39,38 +39,39 @@ export default function HighlightedNFT() {
           </div>
 
           <div className="w-full md:w-auto">
-            <div className="bg-[#3B3E47]/70 px-6 md:px-10 py-6 rounded-[20px] text-center w-full md:w-fit">
-              <p className="text-base text-gray-300 mb-1">Auction ends in:</p>
+  <div className="bg-[#3B3E47]/70 px-4 sm:px-6 md:px-10 py-6 rounded-[20px] text-center w-full md:w-fit max-w-xs mx-auto">
+    <p className="text-sm sm:text-base text-gray-300 mb-1">Auction ends in:</p>
 
-              <div className="flex gap-4 justify-center text-[60px] md:text-[40px] font-bold">
-                <CountdownLoopTimer
-                  periodSec={2 * 60 * 60}                
-                  storageKey="highlighted-auction-cycle" 
-                  render={({ hours, minutes, seconds }) => (
-                    <>
-                      <span>{pad(hours)}</span>
-                      <span>:</span>
-                      <span>{pad(minutes)}</span>
-                      <span>:</span>
-                      <span>{pad(seconds)}</span>
-                    </>
-                  )}
-                />
-              </div>
+    <div className="flex gap-3 sm:gap-4 justify-center text-[36px] sm:text-[48px] md:text-[50px] font-bold">
+      <CountdownLoopTimer
+        periodSec={2 * 60 * 60}
+        storageKey="highlighted-auction-cycle"
+        render={({ hours, minutes, seconds }) => (
+          <>
+            <span>{pad(hours)}</span>
+            <span>:</span>
+            <span>{pad(minutes)}</span>
+            <span>:</span>
+            <span>{pad(seconds)}</span>
+          </>
+        )}
+      />
+    </div>
 
-              <div className="flex gap-14 text-lg justify-center mt-1 text-gray-400">
-                <span>Hours</span><span>Minutes</span><span>Seconds</span>
-              </div>
-            </div>
+    <div className="flex gap-6 sm:gap-10 text-sm sm:text-base justify-center mt-1 text-gray-400">
+      <span>Hours</span><span>Minutes</span><span>Seconds</span>
+    </div>
+  </div>
 
-            <Link
-              href="/nft-page"
-              className="flex md:hidden mt-6 bg-white text-black font-semibold rounded-[20px] px-10 py-4 items-center gap-3 hover:scale-95 transition w-full justify-center"
-            >
-              <img src="/icons/Eye.png" alt="See" className="w-5 h-5" />
-              <span>See NFT</span>
-            </Link>
-          </div>
+  <Link
+    href="/nft-page"
+    className="flex md:hidden mt-6 bg-white text-black font-semibold rounded-[20px] px-10 py-4 items-center gap-3 hover:scale-95 transition w-full justify-center"
+  >
+    <img src="/icons/Eye.png" alt="See" className="w-5 h-5" />
+    <span>See NFT</span>
+  </Link>
+</div>
+
         </div>
       </div>
     </SectionWrapper>

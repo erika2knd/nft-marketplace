@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Hero() {
   return (
     <SectionWrapper className="bg-[#2B2B2B] text-white">
-      <div className="flex flex-col lg:grid lg:grid-cols-2 lg:items-center gap-12 md:gap-16 xl:gap-24 w-full max-w-7xl mx-auto">
+      <div className="flex flex-col lg:grid lg:grid-cols-2 lg:items-center gap-12 md:gap-16 xl:gap-24 ">
         <div className="w-full px-4 sm:px-6 md:px-8 lg:px-0">
           <div className="flex flex-col w-full items-start max-w-[700px] mx-auto lg:mx-0">
             <h1 className="text-left font-bold leading-tight mb-6 text-[clamp(32px,5vw,67px)]">

@@ -58,21 +58,31 @@ export default function Footer() {
               Get exclusive promotions & updates straight to your inbox.
             </p>
 
-            <form className="w-full relative flex items-center">
-              <input
-                type="email"
-                placeholder="Enter your email here"
-                className="w-full bg-white rounded-[20px] py-4 px-6 md:pr-40 text-sm max-md:text-base text-gray-700 placeholder-gray-400"
-              />
-              <button
-                type="submit"
-                className="absolute right-0 top-1/2 -translate-y-1/2 bg-[#A259FF] text-white font-semibold text-sm max-md:text-base px-8 py-4 rounded-[20px] shadow-md transition-transform duration-300 hover:scale-95"
-              >
-                Subscribe
-              </button>
-            </form>
-          </div>
-        </div>
+            <form className="w-full flex flex-col md:relative md:flex-row md:items-center">
+  <input
+    type="email"
+    placeholder="Enter your email here"
+    className="w-full bg-white rounded-[20px] py-4 px-6 md:pr-40 text-sm max-md:text-base text-gray-700 placeholder-gray-400"
+  />
+
+  {/* Кнопка для мобильных (видна только до md) */}
+  <button
+    type="submit"
+    className="mt-4 md:hidden bg-[#A259FF] text-white font-semibold text-sm px-8 py-4 rounded-[20px] shadow-md transition-transform duration-300 hover:scale-95"
+  >
+    Subscribe
+  </button>
+
+  {/* Кнопка для десктопа (absolute) */}
+  <button
+    type="submit"
+    className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 bg-[#A259FF] text-white font-semibold text-sm px-8 py-4 rounded-[20px] shadow-md transition-transform duration-300 hover:scale-95"
+  >
+    Subscribe
+  </button>
+</form>
+</div>
+</div>
 
         <div className="border-t border-[#858584] mt-12 pt-6 text-sm max-md:text-base text-grayText text-center">
           Ⓒ NFT Market. Use this template freely.

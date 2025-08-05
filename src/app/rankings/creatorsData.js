@@ -1,7 +1,7 @@
 const creatorsData = [
   {
     id: 1,
-    name: "Jaydon Ekstrom Bothman",
+    name: "Jaydon Bothman",
     avatar: "/icons/Keepitreal.png",
     change: "+1.41%",
     nftsSold: 602,

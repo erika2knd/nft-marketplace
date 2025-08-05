@@ -2,28 +2,24 @@
 import SectionWrapper from "@/components/SectionWrapper";
 
 const MarketplaceHero = ({
-  // поиск
   query = "",
   onQueryChange = () => {},
 
-  // табы — теперь приходят из родителя
   activeTab = "NFTs",
   onTabChange = () => {},
 
-  // счётчики
   nftsTotal = 0,
   nftsResults = 0,
   collectionsTotal = 0,
   collectionsResults = 0,
 }) => {
-  // считаем количество для бейджа таба: если есть запрос — показываем результаты, иначе общий total
   const tabs = [
     { label: "NFTs",        count: query ? nftsResults        : nftsTotal },
     { label: "Collections", count: query ? collectionsResults : collectionsTotal },
   ];
 
   return (
-    <SectionWrapper className="overflow-hidden pt-16 pb-0 bg-[#2B2B2B]">
+    <SectionWrapper className="overflow-hidden bg-[#2B2B2B]">
       <h1 className="text-[38px] lg:text-[51px] font-semibold mb-3">
         Browse Marketplace
       </h1>
@@ -31,12 +27,11 @@ const MarketplaceHero = ({
         Browse through more than 50k NFTs on the NFT Marketplace.
       </p>
 
-      {/* Поисковая строка */}
       <div className="w-full mb-10">
         <div className="border border-[#3B3B3B] rounded-[20px] flex items-center px-5 py-4 w-full">
           <input
             type="text"
-            placeholder="Search your favourite NFTs"
+            placeholder="Search NFTs"
             value={query}
             onChange={(e) => onQueryChange(e.target.value)}
             onKeyDown={(e) => {
@@ -62,8 +57,7 @@ const MarketplaceHero = ({
         </div>
       </div>
 
-      {/* Табы */}
-      <div className="flex justify-center gap-10 text-[25px] font-semibold text-[#858584]">
+      <div className="flex justify-center gap-10 md:gap-20 text-sm md:text-[25px] font-semibold text-[#858584]">
         {tabs.map((tab) => {
           const isActive = activeTab === tab.label;
           return (

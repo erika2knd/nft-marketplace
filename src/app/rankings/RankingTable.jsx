@@ -23,7 +23,7 @@ export default function RankingTable() {
           Check out top ranking NFT artists on the NFT Marketplace.
         </p>
 
-        <div className="grid grid-cols-4 text-center text-[25px] font-semibold text-[#858584] mb-8">
+        <div className="grid grid-cols-4 text-center text-md md:text-[25px] font-semibold text-[#858584] mb-8">
           {tabs.map((tab) => (
             <button
               key={tab.label}
@@ -50,23 +50,28 @@ export default function RankingTable() {
           {creatorsData.map((creator, index) => (
             <div
               key={index}
-              className="grid grid-cols-12 items-center bg-[#3B3B3B] rounded-[20px] px-6 py-6"
+              className="grid grid-cols-12 items-center bg-[#3B3B3B] rounded-[20px] px-6 md:py-6"
             >
-              <div className="col-span-1">
-                <span className="w-8 h-8 flex items-center justify-center rounded-full bg-[#2B2B2B] text-white font-mono">
+              <div className="col-span-6 md:col-span-6 flex items-center gap-3 transition-transform duration-300 hover:scale-95">
+                <span className="block md:hidden text-xs text-white font-mono">
                   {index + 1}
                 </span>
-              </div>
 
-              <div className="col-span-5 flex items-center gap-4 transition-transform duration-300 hover:scale-95">
+                <span className="hidden md:flex w-8 h-8 text-md items-center justify-center rounded-full bg-[#2B2B2B] text-white font-mono">
+                  {index + 1}
+                </span>
+
                 <Image
                   src={creator.avatar}
                   alt={creator.name}
-                  width={50}
-                  height={50}
-                  className="rounded-full"
+                  width={30}
+                  height={30}
+                  className="w-6 h-6 md:w-12 md:h-12 rounded-full"
                 />
-                <span className="text-white font-semibold">{creator.name}</span>
+
+                <span className="text-xs md:text-lg text-white font-semibold">
+                  {creator.name}
+                </span>
               </div>
 
               <p className="hidden md:block col-span-2 text-green-400 text-center">
@@ -77,7 +82,7 @@ export default function RankingTable() {
                 {creator.nftsSold}
               </p>
 
-              <p className="col-span-6 md:col-span-2 text-white text-right font-mono">
+              <p className="text-sm md:text-md col-span-6 md:col-span-2 text-white text-right font-mono">
                 {creator.volume}
               </p>
             </div>
@@ -87,4 +92,3 @@ export default function RankingTable() {
     </SectionWrapper>
   );
 }
-

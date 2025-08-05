@@ -12,14 +12,14 @@ export default function FeaturedNFTCard() {
           />
 
           <div className="p-5 sm:p-6">
-            <h3 className="text-lg sm:text-xl md:text-[22px] font-semibold mb-3">
+            <h3 className="text-sm md:text-2xl font-semibold mb-3">
               Space Walking
             </h3>
             <div className="flex items-center gap-3">
               <img
                 src="/images/Avatar-Placeholder.jpg"
                 alt="Author"
-                className="w-10 h-10 rounded-full"
+                className="w-6 h-6 md:w-10 md:h-10 rounded-full"
               />
               <p className="text-sm sm:text-base">Animakid</p>
             </div>
