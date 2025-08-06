@@ -1,11 +1,45 @@
+'use client';
+
 import Image from "next/image";
 import Footer from "@/components/Footer";
 import SectionWrapper from "@/components/SectionWrapper";
 import ArtistNFTGrid from "@/components/ArtistNFTGrid";
+import { useState, useEffect } from "react";
+import { db } from "../../../firebase";
+import { collection, getDocs, query, where } from "firebase/firestore";
 
 export default function ArtistPage() {
+  const [activeTab, setActiveTab] = useState("Created");
+  const [nfts, setNfts] = useState([]);
+  const artistName = "Animakid";
+
+  useEffect(() => {
+    const fetchNFTs = async () => {
+      try {
+        let q;
+        if (activeTab === "Created") {
+          q = query(collection(db, "nfts"), where("author", "==", artistName));
+        } else if (activeTab === "Owned") {
+          q = query(collection(db, "nfts"), where("owner", "==", artistName));
+        } else if (activeTab === "Collection") {
+          q = query(
+            collection(db, "nfts"),
+            where("collectionAuthor", "==", artistName)
+          );
+        }
+        const snapshot = await getDocs(q);
+        const items = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+        setNfts(items);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+    fetchNFTs();
+  }, [activeTab]);
+
   return (
     <>
+      {/* верхняя секция */}
       <section className="relative w-full h-[320px] lg:h-[420px]">
         <Image
           src="/images/ArtistPageImage.png"
@@ -15,7 +49,6 @@ export default function ArtistPage() {
           className="object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#A259FF]/60 to-transparent" />
-
         <SectionWrapper>
           <div className="absolute bottom-[-70px] left-1/2 -translate-x-1/2 lg:left-24 lg:translate-x-0 z-10">
             <Image
@@ -29,8 +62,9 @@ export default function ArtistPage() {
         </SectionWrapper>
       </section>
 
+      {/* инфо */}
       <SectionWrapper className="pt-[100px] bg-[#2B2B2B]">
-  <div className="flex flex-col lg:flex-row justify-between items-start gap-6">
+         <div className="flex flex-col lg:flex-row justify-between items-start gap-6">
     <div className="w-full lg:w-auto flex-1">
       <h1 className="text-4xl font-bold mb-4 text-center lg:text-left">Animakid</h1>
 
@@ -89,28 +123,39 @@ export default function ArtistPage() {
     </div>
   </div>
 
-
-
+        {/* табы */}
         <div className="border-t border-[#3B3B3B] mt-12 pt-6">
-          <div className="flex justify-center gap-14 text-gray-400 font-semibold text-lg">
-            <div className="relative flex flex-col items-center cursor-pointer">
-              <span className="text-white">Created</span>
-              <span className="bg-gray-500 text-white text-sm rounded-full px-3 py-0.5 mt-1">302</span>
-              <div className="w-[60%] h-[2px] bg-white mt-2 rounded-full" />
-            </div>
-            <div className="relative flex flex-col items-center cursor-pointer hover:text-white transition">
-              <span>Owned</span>
-              <span className="bg-[#3B3B3B] text-white text-sm rounded-full px-3 py-0.5 mt-1">67</span>
-            </div>
-            <div className="relative flex flex-col items-center cursor-pointer hover:text-white transition">
-              <span>Collection</span>
-              <span className="bg-[#3B3B3B] text-white text-sm rounded-full px-3 py-0.5 mt-1">4</span>
-            </div>
+          <div className="flex justify-center gap-12 md:gap-14 text-gray-400 font-semibold text-xs md:text-lg">
+            {["Created", "Owned", "Collection"].map((tab) => (
+              <div
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                className={`relative flex flex-col items-center cursor-pointer transition ${
+                  activeTab === tab ? "text-white" : "hover:text-white"
+                }`}
+              >
+                <span>{tab}</span>
+                <span
+                  className={`text-sm rounded-full px-3 py-0.5 mt-1 ${
+                    activeTab === tab
+                      ? "bg-gray-500 text-white"
+                      : "bg-[#3B3B3B] text-white"
+                  }`}
+                >
+                  {tab === activeTab ? nfts.length : 0}
+                </span>
+                {activeTab === tab && (
+                  <div className="w-[60%] h-[2px] bg-white mt-2 rounded-full" />
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </SectionWrapper>
 
-      <ArtistNFTGrid />
+      {/* сетка NFT */}
+      <ArtistNFTGrid items={nfts} />
+
       <Footer />
     </>
   );

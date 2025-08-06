@@ -11,61 +11,61 @@ const NFTDetails = () => {
         <img
           src="/images/main-nft-page.png"
           alt="The Orbitians"
-          className="w-full h-[500px] object-cover"
+          className="w-full h-[300px] object-cover"
         />
       </div>
 
       <SectionWrapper
-        className="bg-[#2B2B2B] text-white pt-12 pb-32 px-8 lg:px-32"
+        className="bg-[#2B2B2B] text-white pt-12 pb-10 px-8 lg:px-24 py-12 lg:py-24"
         noPadding
       >
-        <div className="flex flex-col lg:flex-row gap-16 items-start">
+        <div className="flex flex-col lg:flex-row gap-32 items-start">
           <div className="lg:w-2/3 w-full">
-            <h1 className="text-[64px] leading-[74px] font-semibold mb-3">
+            <h1 className="text-4xl md:text-[64px] leading-[74px] font-semibold mb-3">
               The Orbitians
             </h1>
             <p className="text-[#858584] text-lg mb-6">
               Minted On Sep 30, 2022
             </p>
 
-            {/* --- Мобильный таймер --- */}
             <div className="block lg:hidden bg-[#3B3B3B] rounded-[20px] p-6 mb-10">
               <p className="text-[#CCCCCC] text-sm mb-4">Auction ends in:</p>
 
-              <div className="flex justify-center items-baseline gap-8 mb-6">
-                <CountdownLoopTimer
-                  periodSec={2 * 60 * 60}
-                  storageKey="nft-details-orbitians-auction"
-                  render={({ hours, minutes, seconds }) => (
-                    <>
-                      <div className="flex flex-col items-center">
-                        <p className="text-white text-[52px] font-bold leading-none">
-                          {pad(hours)}
-                        </p>
-                        <span className="text-[#CCCCCC] text-sm">Hours</span>
-                      </div>
+              <div className="flex justify-center items-baseline gap-2 sm:gap-8 mb-6">
+  <CountdownLoopTimer
+    periodSec={2 * 60 * 60}
+    storageKey="nft-details-orbitians-auction"
+    render={({ hours, minutes, seconds }) => (
+      <>
+        <div className="flex flex-col items-center">
+          <p className="text-white text-[36px] sm:text-[48px] md:text-[56px] font-bold leading-none">
+            {pad(hours)}
+          </p>
+          <span className="text-[#CCCCCC] text-xs sm:text-sm">Hours</span>
+        </div>
 
-                      <p className="text-white text-[56px] font-bold leading-none px-1">:</p>
+        <p className="text-white text-[36px] sm:text-[48px] md:text-[56px] font-bold leading-none px-1">:</p>
 
-                      <div className="flex flex-col items-center">
-                        <p className="text-white text-[56px] font-bold leading-none">
-                          {pad(minutes)}
-                        </p>
-                        <span className="text-[#CCCCCC] text-sm">Minutes</span>
-                      </div>
+        <div className="flex flex-col items-center">
+          <p className="text-white text-[36px] sm:text-[48px] md:text-[56px] font-bold leading-none">
+            {pad(minutes)}
+          </p>
+          <span className="text-[#CCCCCC] text-xs sm:text-sm">Minutes</span>
+        </div>
 
-                      <p className="text-white text-[56px] font-bold leading-none px-1">:</p>
+        <p className="text-white text-[36px] sm:text-[48px] md:text-[56px] font-bold leading-none px-1">:</p>
 
-                      <div className="flex flex-col items-center">
-                        <p className="text-white text-[56px] font-bold leading-none">
-                          {pad(seconds)}
-                        </p>
-                        <span className="text-[#CCCCCC] text-sm">Seconds</span>
-                      </div>
-                    </>
-                  )}
-                />
-              </div>
+        <div className="flex flex-col items-center">
+          <p className="text-white text-[36px] sm:text-[48px] md:text-[56px] font-bold leading-none">
+            {pad(seconds)}
+          </p>
+          <span className="text-[#CCCCCC] text-xs sm:text-sm">Seconds</span>
+        </div>
+      </>
+    )}
+  />
+</div>
+
 
               <button className="w-full bg-[#A259FF] text-white text-[16px] font-semibold px-6 py-3 rounded-[20px] transition-transform hover:scale-95">
                 Place Bid

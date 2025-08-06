@@ -17,7 +17,7 @@ export default function ConnectWalletPage() {
         </div>
 
         <div className="w-full lg:w-1/2 flex items-center justify-center px-6 lg:px-24 py-16">
-          <div className="max-w-md">
+          <div className="max-w-md text-center lg:text-left">
             <h1 className="text-5xl font-bold mb-4">Connect Wallet</h1>
             <p className="text-gray-300 mb-10 text-xl leading-relaxed">
               Choose a wallet you want to connect.

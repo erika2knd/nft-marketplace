@@ -34,15 +34,15 @@ export default function Hero() {
             <div className="grid grid-cols-3 w-full mx-auto gap-4 sm:gap-6 lg:gap-4 xl:gap-6 text-center lg:text-left">
               <div className="flex flex-col items-center lg:items-start">
                 <h3 className="font-bold leading-none text-[20px] sm:text-[24px] lg:text-[28px]">240k+</h3>
-                <p className="text-grayText mt-1 text-[14px] sm:text-[16px] lg:text-[20px]">Total Sale</p>
+                <p className="text-grayText mt-1 text-xs sm:text-[16px] lg:text-xl">Total Sale</p>
               </div>
               <div className="flex flex-col items-center lg:items-start">
                 <h3 className="font-bold leading-none text-[20px] sm:text-[24px] lg:text-[28px]">100k+</h3>
-                <p className="text-grayText mt-1 text-[14px] sm:text-[16px] lg:text-[20px]">Auctions</p>
+                <p className="text-grayText mt-1 text-xs sm:text-sm lg:text-xl">Auctions</p>
               </div>
               <div className="flex flex-col items-center lg:items-start">
                 <h3 className="font-bold leading-none text-[20px] sm:text-[24px] lg:text-[28px]">240k+</h3>
-                <p className="text-grayText mt-1 text-[14px] sm:text-[16px] lg:text-[20px]">Artists</p>
+                <p className="text-grayText mt-1 text-xs sm:text-sm lg:text-xl">Artists</p>
               </div>
             </div>
           </div>

@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const MoreFromArtist = () => {
   return (
-  <SectionWrapper className="bg-[#2B2B2B] text-white pt-10 pb-32 py-24">
+  <SectionWrapper className="bg-[#2B2B2B] text-white">
   <div className="hidden md:flex justify-between items-center mb-14">
     <h2 className="text-[38px] font-semibold">More From This Artist</h2>
     <Link
@@ -38,10 +38,10 @@ const MoreFromArtist = () => {
         alt={nft.title}
         width={330}
         height={330}
-        className="w-full h-[330px] object-cover"
+        className="w-full h-[200px] md:h-[330px] object-cover"
       />
-      <div className="p-5">
-        <h3 className="text-xl font-semibold mb-2">{nft.title}</h3>
+      <div className=" p-4 md:p-5">
+        <h3 className="text-md md:text-xl font-semibold mb-2">{nft.title}</h3>
         <div className="flex items-center gap-2 text-[#858584] text-sm mb-4">
           <img
             src={nft.authorImage}
@@ -50,7 +50,7 @@ const MoreFromArtist = () => {
           />
           <span>{nft.author}</span>
         </div>
-        <div className="flex justify-between text-sm pt-3">
+        <div className="flex justify-between text-xs md:text-sm md:pt-3">
           <div>
             <p className="text-[#858584] mb-1">Price</p>
             <p>{nft.price}</p>
